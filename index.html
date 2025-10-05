@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>WD40 Landing</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Start Screen with Play Button -->
+      <button id="playButton" aria-label="Play base video">Play ▶</button>
+
+      <!-- Base Video (controls hidden) -->
+      <video id="baseVideo" preload="auto" playsinline webkit-playsinline>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+      </video>
+
+      <!-- Canvas to freeze the last frame of the base video -->
+      <canvas id="freezeCanvas"></canvas>
+
+      <!-- Phone + Hand Overlay Container (hidden until base video ends) -->
+      <div id="phoneStage" aria-hidden="true">
+        <!-- Hand image (behind phone) -->
+        <img id="handImg" alt="Hand" src="http://139.59.5.51/newsletters/hand.webp" />
+
+        <!-- Screen mask container where videos play INSIDE the phone -->
+        <div id="phoneScreen">
+          <video id="phoneVideo" muted playsinline webkit-playsinline></video>
+        </div>
+
+        <!-- Phone image (frame above phone screen area) -->
+        <img id="phoneFrame" alt="Phone frame" src="https://pngimg.com/uploads/smartphone/smartphone_PNG8511.png" />
+      </div>
+
+      <!-- Portrait orientation blocker on mobile -->
+      <div id="orientationBlocker">
+        <div class="message">
+          <div>Please rotate your device</div>
+          <div>Landscape mode only</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+

@@ -13,7 +13,7 @@
 
       <!-- Base Video (controls hidden) -->
       <video id="baseVideo" preload="auto" playsinline webkit-playsinline>
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        <source src="./base_flower.mp4" type="video/mp4">
       </video>
 
       <!-- Canvas to freeze the last frame of the base video -->
@@ -27,6 +27,19 @@
         <!-- Screen mask container where videos play INSIDE the phone -->
         <div id="phoneScreen">
           <video id="phoneVideo" muted playsinline webkit-playsinline></video>
+          
+          <!-- Recording elements -->
+          <video id="cameraFeed" autoplay muted playsinline webkit-playsinline style="display:none;"></video>
+          <canvas id="recordCanvas" style="display:none;"></canvas>
+          
+          <div id="recordingControls" style="display:none;">
+            <div id="statusText">Ready to Record</div>
+            <div class="controls-row">
+              <button id="startRecordBtn" class="record-btn">Record</button>
+              <button id="stopRecordBtn" class="record-btn" style="display:none;">Stop</button>
+              <button id="playRecordBtn" class="record-btn" style="display:none;">Play</button>
+            </div>
+          </div>
         </div>
 
         <!-- Phone image (frame above phone screen area) -->

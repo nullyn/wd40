@@ -23,8 +23,8 @@ let animationFrameId;
 
 // Local mobile playlist videos (only files known to exist)
 const mobilePlaylist = [
-  './mobile_sample_640x360.mp4',
-  './mobile_sample_5s.mp4'
+  './sample_1.mp4',
+  './sample_2.mp4'
 ];
 
 let currentIndex = 0;

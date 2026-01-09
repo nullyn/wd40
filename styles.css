@@ -67,8 +67,8 @@ html, body {
 #phoneScreen {
   position: absolute;
   z-index: 2; /* behind the phone frame */
-  width: min(45vw, 34vh);
-  height: calc(min(45vw, 34vh) * 2.0);
+  width: min(62vw, 48vh);
+  height: calc(min(62vw, 48vh) * 2.0);
   overflow: hidden; /* masks the video to stay inside the phone */
   border-radius: 4.5% / 3.5%; /* subtle rounded corners */
   transform: translateY(-7vh);
@@ -131,7 +131,7 @@ html, body {
 #phoneFrame {
   position: absolute;
   /*width: min(50vw, 50vh);*/
-  height: 90vh;
+  height: 120vh;
   z-index: 1; /* above phone video */
   filter: drop-shadow(0 20px 60px rgba(0,0,0,0.6));
 }
@@ -139,7 +139,7 @@ html, body {
 #handImg {
   position: absolute;
   /*width: min(60vw, 60vh);*/
-  height: 100vh;
+  height: 140vh;
   z-index: 1; /* behind phone video */
   transform: translate(-8%, 10%);
   opacity: 1;

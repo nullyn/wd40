@@ -166,25 +166,23 @@ async function startRecording() {
       cancelAnimationFrame(animationFrameId);
       cameraFeed.srcObject = null;
       
-      // Update UI
+      // Update UI - Show Re-Record, Play, and Download buttons
       statusText.innerText = "Recording Finished";
       stopRecordBtn.style.display = 'none';
       startRecordBtn.innerText = "Re-Record";
       startRecordBtn.style.display = 'inline-block';
       playRecordBtn.style.display = 'inline-block';
+      downloadRecordBtn.style.display = 'inline-block';
     };
     
     recordedChunks = [];
     mediaRecorder.start();
     
-    // Update UI
-startRecordBtn.style.display = 'none';
+    // Update UI - Only show Stop button during recording
+    startRecordBtn.style.display = 'none';
     stopRecordBtn.style.display = 'inline-block';
     playRecordBtn.style.display = 'none';
     downloadRecordBtn.style.display = 'none';
-      startRecordBtn.style.display = 'inline-block';
-      playRecordBtn.style.display = 'inline-block';
-      downloadRecordBtn.style.display = 'inline-block';
     
     // Timer logic (10s cap)
     let timeLeft = 10;

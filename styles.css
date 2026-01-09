@@ -67,11 +67,11 @@ html, body {
 #phoneScreen {
   position: absolute;
   z-index: 2; /* behind the phone frame */
-  width: min(66vw, 52vh);
-  height: calc(min(66vw, 52vh) * 2.1);
+  width: min(54vw, 42vh);
+  height: calc(min(54vw, 42vh) * 2.0);
   overflow: hidden; /* masks the video to stay inside the phone */
   border-radius: 4.5% / 3.5%; /* subtle rounded corners */
-  transform: translateY(-7vh);
+  transform: translateY(-5vh);
 }
 
 #phoneScreen video,

@@ -131,7 +131,7 @@ html, body {
 #phoneFrame {
   position: absolute;
   /*width: min(50vw, 50vh);*/
-  height: 120vh;
+  height: 105vh;
   z-index: 1; /* above phone video */
   filter: drop-shadow(0 20px 60px rgba(0,0,0,0.6));
 }
@@ -139,7 +139,7 @@ html, body {
 #handImg {
   position: absolute;
   /*width: min(60vw, 60vh);*/
-  height: 140vh;
+  height: 125vh;
   z-index: 1; /* behind phone video */
   transform: translate(-8%, 10%);
   opacity: 1;

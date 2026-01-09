@@ -77,10 +77,11 @@ html, body {
 #phoneScreen video,
 #recordCanvas {
   position: absolute;
-  width: 92%;
-  height: 94%;
-  top: 3%;
-  left: 4%;
+  width: 96%;
+  height: 90%;
+  top: 10%;
+  left: 2%;
+  border-radius: 35px;
   object-fit: cover; /* fill while preserving aspect ratio */
 }
 

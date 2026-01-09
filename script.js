@@ -12,6 +12,7 @@ const statusText = document.getElementById('statusText');
 const startRecordBtn = document.getElementById('startRecordBtn');
 const stopRecordBtn = document.getElementById('stopRecordBtn');
 const playRecordBtn = document.getElementById('playRecordBtn');
+const downloadRecordBtn = document.getElementById('downloadRecordBtn');
 
 let mediaRecorder;
 let recordedChunks = [];
@@ -110,10 +111,11 @@ function initRecordingUI() {
   
   statusText.innerText = "Ready to Record";
   
-  // Reset buttons
+// Reset buttons
   startRecordBtn.style.display = 'inline-block';
   stopRecordBtn.style.display = 'none';
   playRecordBtn.style.display = 'none';
+  downloadRecordBtn.style.display = 'none';
 }
 
 async function startRecording() {
@@ -176,9 +178,13 @@ async function startRecording() {
     mediaRecorder.start();
     
     // Update UI
-    startRecordBtn.style.display = 'none';
+startRecordBtn.style.display = 'none';
     stopRecordBtn.style.display = 'inline-block';
     playRecordBtn.style.display = 'none';
+    downloadRecordBtn.style.display = 'none';
+      startRecordBtn.style.display = 'inline-block';
+      playRecordBtn.style.display = 'inline-block';
+      downloadRecordBtn.style.display = 'inline-block';
     
     // Timer logic (10s cap)
     let timeLeft = 10;
@@ -218,6 +224,15 @@ function playRecording() {
     phoneVideo.play().catch(e => console.error("Play error", e));
     
     statusText.innerText = "Playing...";
+  }
+}
+
+function downloadRecording() {
+  if (recordedBlobUrl) {
+    const link = document.createElement('a');
+    link.href = recordedBlobUrl;
+    link.download = `recording_${new Date().getTime()}.webm`;
+    link.click();
   }
 }
 
@@ -266,6 +281,7 @@ function drawCameraToCanvas() {
 startRecordBtn.addEventListener('click', startRecording);
 stopRecordBtn.addEventListener('click', stopRecording);
 playRecordBtn.addEventListener('click', playRecording);
+downloadRecordBtn.addEventListener('click', downloadRecording);
 
 
 
